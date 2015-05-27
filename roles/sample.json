@@ -1,0 +1,31 @@
+{
+   "name": "role1",
+   "description": "This is the description for the role1 role.",
+   "json_class": "Chef::Role",
+   "default_attributes": {
+     "application": {
+       "sites":[ 
+         {
+           "sitename": "LoanAssignmentAdmin", 
+           "bindings": ["https/:443:LoanAssignmentAdmin"],
+           "certfile": "star.pnmac.com.pfx",
+           "pool_un" : "00customers@pnmac.com"
+         },
+         {
+           "sitename": "AssignProcessor", 
+           "bindings": ["https/:443:AssignProcessor"],
+           "certfile": "star.pnmac.com.pfx",
+           "pool_un": "00customers@pnmac.com"
+         }
+       ] 
+     }
+   },
+   "override_attributes": {
+   },
+   "chef_type": "role",
+   "run_list": [
+     "recipe[helping::default]"
+   ],
+   "env_run_lists": {
+   }
+}
